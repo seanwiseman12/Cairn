@@ -9,27 +9,39 @@ struct RootView: View {
             switch auth.state {
             case .loading:
                 ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(ContourBackground())
             case .signedOut:
                 AuthView()
             case .signedIn:
-                MainTabView()
+                if DebugLaunch.showAuth { AuthView() } else { MainTabView() }
             }
         }
+        .tint(Theme.forest)
         .animation(.default, value: auth.state)
         .task { await auth.listen() }
     }
 }
 
-/// Tabs: Globe · Log · Feed · Leaderboard · Profile.
-/// Most are placeholders until their phase is built.
+enum AppTab: String, Hashable {
+    case globe, friends, you
+}
+
+/// Tabs: Globe · Friends · You. Logging lives behind the + button on the Globe.
 struct MainTabView: View {
+    @State private var tab: AppTab = DebugLaunch.initialTab ?? .globe
+
     var body: some View {
-        TabView {
-            GlobeView().tabItem { Label("Globe", systemImage: "globe.americas.fill") }
-            LogAdventureView().tabItem { Label("Log", systemImage: "plus.circle.fill") }
-            FeedView().tabItem { Label("Feed", systemImage: "person.2.fill") }
-            LeaderboardView().tabItem { Label("Leaderboard", systemImage: "trophy.fill") }
-            ProfileView().tabItem { Label("Profile", systemImage: "person.crop.circle") }
+        TabView(selection: $tab) {
+            GlobeView()
+                .tabItem { Label("Globe", systemImage: "globe.americas.fill") }
+                .tag(AppTab.globe)
+            FriendsView()
+                .tabItem { Label("Friends", systemImage: "person.2.fill") }
+                .tag(AppTab.friends)
+            YouView()
+                .tabItem { Label("You", systemImage: "person.crop.circle") }
+                .tag(AppTab.you)
         }
     }
 }

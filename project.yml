@@ -34,3 +34,7 @@ targets:
         SUPABASE_HOST: $(SUPABASE_HOST)
         SUPABASE_ANON_KEY: $(SUPABASE_ANON_KEY)
         UILaunchScreen: {}
+        # Bundled fonts (SIL Open Font License; licenses in Cairn/Resources/Fonts)
+        UIAppFonts:
+          - BebasNeue-Regular.ttf
+          - IMFellEnglish-Italic.ttf

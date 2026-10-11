@@ -12,62 +12,76 @@ struct AuthView: View {
     @State private var message: String?
 
     var body: some View {
-        VStack(spacing: 24) {
-            Spacer()
-
-            VStack(spacing: 8) {
-                Image(systemName: "mountain.2.fill")
-                    .font(.system(size: 56))
-                    .foregroundStyle(.tint)
-                Text("Cairn")
-                    .font(.largeTitle.bold())
-                Text("Log every adventure on Earth.")
-                    .foregroundStyle(.secondary)
-            }
-
-            VStack(spacing: 12) {
-                TextField("Email", text: $email)
-                    .textContentType(.emailAddress)
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                SecureField("Password", text: $password)
-                    .textContentType(isSignUp ? .newPassword : .password)
-            }
-            .textFieldStyle(.roundedBorder)
-
-            if let message {
-                Text(message)
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-            }
-
-            Button {
-                Task { await submit() }
-            } label: {
-                Group {
-                    if isWorking {
-                        ProgressView()
-                    } else {
-                        Text(isSignUp ? "Create account" : "Sign in")
-                    }
+        ScrollView {
+            VStack(spacing: 28) {
+                VStack(spacing: -10) {
+                    Text("the field journal")
+                        .font(.script(32, relativeTo: .title))
+                    Text("CAIRN")
+                        .font(.display(150, relativeTo: .largeTitle))
+                        .tracking(2)
+                        .speckled()
+                    Text("for every adventure")
+                        .font(.script(32, relativeTo: .title))
                 }
-                .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .disabled(isWorking || email.isEmpty || password.count < 6)
+                .foregroundStyle(Theme.cream)
+                .multilineTextAlignment(.center)
+                .accessibilityElement(children: .combine)
+                .padding(.top, 56)
 
-            Button(isSignUp ? "Have an account? Sign in" : "New here? Create an account") {
-                isSignUp.toggle()
-                message = nil
-            }
-            .font(.footnote)
+                VStack(alignment: .leading, spacing: 14) {
+                    Text(isSignUp ? "Start your journal" : "Welcome back")
+                        .font(.script(28, relativeTo: .title2))
+                        .foregroundStyle(Theme.ink)
 
-            Spacer()
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Email").journalLabel()
+                        TextField("you@example.com", text: $email)
+                            .textContentType(.emailAddress)
+                            .keyboardType(.emailAddress)
+                            .textInputAutocapitalization(.never)
+                            .autocorrectionDisabled()
+                    }
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Password").journalLabel()
+                        SecureField("At least 6 characters", text: $password)
+                            .textContentType(isSignUp ? .newPassword : .password)
+                    }
+
+                    if let message {
+                        Text(message)
+                            .font(.footnote)
+                            .foregroundStyle(Theme.rust)
+                    }
+
+                    Button {
+                        Task { await submit() }
+                    } label: {
+                        if isWorking {
+                            ProgressView().tint(Theme.cream)
+                        } else {
+                            Text(isSignUp ? "Create account" : "Sign in")
+                        }
+                    }
+                    .buttonStyle(JournalButtonStyle())
+                    .disabled(isWorking || email.isEmpty || password.count < 6)
+                    .padding(.top, 4)
+                }
+                .textFieldStyle(JournalFieldStyle())
+                .journalCard(padding: 20)
+
+                Button(isSignUp ? "Have an account? Sign in" : "New here? Create an account") {
+                    isSignUp.toggle()
+                    message = nil
+                }
+                .font(.script(22, relativeTo: .body))
+                .foregroundStyle(Theme.cream)
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, 24)
         }
-        .padding(24)
+        .scrollDismissesKeyboard(.interactively)
+        .background(ContourBackground())
     }
 
     private func submit() async {
