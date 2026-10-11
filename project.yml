@@ -1,0 +1,36 @@
+# XcodeGen spec. Run `xcodegen` in this folder to (re)generate Cairn.xcodeproj.
+# Edit this file instead of the project's build settings so changes stay readable.
+name: Cairn
+options:
+  bundleIdPrefix: com.cairnapp
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  Supabase:
+    url: https://github.com/supabase/supabase-swift
+    from: "2.0.0"
+targets:
+  Cairn:
+    type: application
+    platform: iOS
+    sources: [Cairn]
+    configFiles:
+      Debug: Config/Secrets.xcconfig
+      Release: Config/Secrets.xcconfig
+    dependencies:
+      - package: Supabase
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cairnapp.Cairn
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_CFBundleDisplayName: Cairn
+    info:
+      path: Cairn/Resources/Info.plist
+      properties:
+        SUPABASE_HOST: $(SUPABASE_HOST)
+        SUPABASE_ANON_KEY: $(SUPABASE_ANON_KEY)
+        UILaunchScreen: {}
