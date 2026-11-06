@@ -1,0 +1,502 @@
+{
+ "note": "Peak lists for challenge badges. ids = GeoNames ids from peaks.sqlite (any one counts); a log within 400 m of lat/lon also counts. Built by hand from tools/peaks lookups.",
+ "lists": [
+  {
+   "id": "adk46",
+   "name": "Adirondack 46ers",
+   "region": "New York, USA",
+   "detail": "All 46 Adirondack High Peaks",
+   "symbol": "mountain.2.fill",
+   "bonusXP": 4600,
+   "peaks": [
+    {
+     "name": "Mount Marcy",
+     "ids": [
+      5125979
+     ],
+     "lat": 44.11273,
+     "lon": -73.92378,
+     "ele": 1626
+    },
+    {
+     "name": "Algonquin Peak",
+     "ids": [
+      5106967
+     ],
+     "lat": 44.14366,
+     "lon": -73.98654,
+     "ele": 1555
+    },
+    {
+     "name": "Mount Haystack",
+     "ids": [
+      5120332
+     ],
+     "lat": 44.10561,
+     "lon": -73.90042,
+     "ele": 1497
+    },
+    {
+     "name": "Mount Skylight",
+     "ids": [
+      5138344
+     ],
+     "lat": 44.0995,
+     "lon": -73.9307,
+     "ele": 1495
+    },
+    {
+     "name": "Whiteface Mountain",
+     "ids": [
+      5144372
+     ],
+     "lat": 44.36588,
+     "lon": -73.90265,
+     "ele": 1466
+    },
+    {
+     "name": "Dix Mountain",
+     "ids": [
+      5115110
+     ],
+     "lat": 44.08228,
+     "lon": -73.78625,
+     "ele": 1473
+    },
+    {
+     "name": "Gray Peak",
+     "ids": [
+      5119179
+     ],
+     "lat": 44.11144,
+     "lon": -73.93487,
+     "ele": 1463
+    },
+    {
+     "name": "Iroquois Peak",
+     "ids": [
+      5122354
+     ],
+     "lat": 44.137,
+     "lon": -73.9982,
+     "ele": 1472
+    },
+    {
+     "name": "Basin Mountain",
+     "ids": [
+      5108073
+     ],
+     "lat": 44.12116,
+     "lon": -73.88625,
+     "ele": 1468
+    },
+    {
+     "name": "Gothics",
+     "ids": [
+      5118921
+     ],
+     "lat": 44.12811,
+     "lon": -73.85708,
+     "ele": 1425
+    },
+    {
+     "name": "Mount Colden",
+     "ids": [
+      5113241
+     ],
+     "lat": 44.127,
+     "lon": -73.95987,
+     "ele": 1436
+    },
+    {
+     "name": "Giant Mountain",
+     "ids": [
+      6941053
+     ],
+     "lat": 44.16116,
+     "lon": -73.72028,
+     "ele": 1409
+    },
+    {
+     "name": "Nippletop",
+     "ids": [
+      5128820
+     ],
+     "lat": 44.08922,
+     "lon": -73.81597,
+     "ele": 1393
+    },
+    {
+     "name": "Santanoni Peak",
+     "ids": [
+      5136309
+     ],
+     "lat": 44.08228,
+     "lon": -74.13099,
+     "ele": 1401
+    },
+    {
+     "name": "Mount Redfield",
+     "ids": [
+      5133596
+     ],
+     "lat": 44.09478,
+     "lon": -73.94987,
+     "ele": 1403
+    },
+    {
+     "name": "Wright Peak",
+     "ids": [
+      5145118
+     ],
+     "lat": 44.15172,
+     "lon": -73.98015,
+     "ele": 1389
+    },
+    {
+     "name": "Saddleback Mountain",
+     "ids": [
+      5134792
+     ],
+     "lat": 44.12644,
+     "lon": -73.87486,
+     "ele": 1376
+    },
+    {
+     "name": "Panther Peak",
+     "ids": [
+      5130488
+     ],
+     "lat": 44.09839,
+     "lon": -74.1321,
+     "ele": 1358
+    },
+    {
+     "name": "Table Top Mountain",
+     "ids": [
+      5140423
+     ],
+     "lat": 44.14366,
+     "lon": -73.90709,
+     "ele": 1306
+    },
+    {
+     "name": "Rocky Peak Ridge",
+     "ids": [
+      8481825
+     ],
+     "lat": 44.15422,
+     "lon": -73.70517,
+     "ele": 1336
+    },
+    {
+     "name": "Macomb Mountain",
+     "ids": [
+      5125608
+     ],
+     "lat": 44.05172,
+     "lon": -73.78013,
+     "ele": 1336
+    },
+    {
+     "name": "Armstrong Mountain",
+     "ids": [
+      5107352
+     ],
+     "lat": 44.13477,
+     "lon": -73.84903,
+     "ele": 1320
+    },
+    {
+     "name": "Hough Peak",
+     "ids": [
+      5121378
+     ],
+     "lat": 44.0695,
+     "lon": -73.77764,
+     "ele": 1341
+    },
+    {
+     "name": "Seward Mountain",
+     "ids": [
+      5137706
+     ],
+     "lat": 44.15978,
+     "lon": -74.19932,
+     "ele": 1319
+    },
+    {
+     "name": "Mount Marshall",
+     "ids": [
+      5126085
+     ],
+     "lat": 44.12755,
+     "lon": -74.01181,
+     "ele": 1333
+    },
+    {
+     "name": "Allen Mountain",
+     "ids": [
+      5107027
+     ],
+     "lat": 44.07089,
+     "lon": -73.93959,
+     "ele": 1311
+    },
+    {
+     "name": "Big Slide Mountain",
+     "ids": [
+      5109139
+     ],
+     "lat": 44.18227,
+     "lon": -73.87042,
+     "ele": 1280
+    },
+    {
+     "name": "Esther Mountain",
+     "ids": [
+      5116687
+     ],
+     "lat": 44.38699,
+     "lon": -73.88987,
+     "ele": 1293
+    },
+    {
+     "name": "Upper Wolfjaw Mountain",
+     "ids": [
+      5142038
+     ],
+     "lat": 44.14061,
+     "lon": -73.84514,
+     "ele": 1269
+    },
+    {
+     "name": "Lower Wolfjaw Mountain",
+     "ids": [
+      5125455
+     ],
+     "lat": 44.14838,
+     "lon": -73.83264,
+     "ele": 1273
+    },
+    {
+     "name": "Street Mountain",
+     "ids": [
+      5139984
+     ],
+     "lat": 44.17977,
+     "lon": -74.04376,
+     "ele": 1223
+    },
+    {
+     "name": "Phelps Mountain",
+     "ids": [
+      5131089
+     ],
+     "lat": 44.157,
+     "lon": -73.92098,
+     "ele": 1262
+    },
+    {
+     "name": "Donaldson Mountain",
+     "ids": [
+      5115200
+     ],
+     "lat": 44.15395,
+     "lon": -74.21099,
+     "ele": 1238
+    },
+    {
+     "name": "Seymour Mountain",
+     "ids": [
+      5137717
+     ],
+     "lat": 44.15783,
+     "lon": -74.1721,
+     "ele": 1236
+    },
+    {
+     "name": "Sawteeth",
+     "ids": [],
+     "lat": 44.1131,
+     "lon": -73.8509,
+     "ele": 1251
+    },
+    {
+     "name": "Cascade Mountain",
+     "ids": [
+      5111680
+     ],
+     "lat": 44.21866,
+     "lon": -73.86014,
+     "ele": 1241
+    },
+    {
+     "name": "South Dix",
+     "ids": [
+      5138825
+     ],
+     "lat": 44.06005,
+     "lon": -73.7743,
+     "ele": 1242
+    },
+    {
+     "name": "Porter Mountain",
+     "ids": [
+      5132051
+     ],
+     "lat": 44.21533,
+     "lon": -73.84348,
+     "ele": 1151
+    },
+    {
+     "name": "Mount Colvin",
+     "ids": [
+      5113399
+     ],
+     "lat": 44.09394,
+     "lon": -73.83458,
+     "ele": 1235
+    },
+    {
+     "name": "Mount Emmons",
+     "ids": [
+      5116587
+     ],
+     "lat": 44.14367,
+     "lon": -74.21405,
+     "ele": 1226
+    },
+    {
+     "name": "Dial Mountain",
+     "ids": [
+      5114988
+     ],
+     "lat": 44.10589,
+     "lon": -73.79597,
+     "ele": 1215
+    },
+    {
+     "name": "East Dix (Grace Peak)",
+     "ids": [
+      5115829
+     ],
+     "lat": 44.06533,
+     "lon": -73.75736,
+     "ele": 1223
+    },
+    {
+     "name": "Blake Peak",
+     "ids": [
+      5109459
+     ],
+     "lat": 44.08144,
+     "lon": -73.84458,
+     "ele": 1212
+    },
+    {
+     "name": "Cliff Mountain",
+     "ids": [
+      5112944
+     ],
+     "lat": 44.10311,
+     "lon": -73.97515,
+     "ele": 1202
+    },
+    {
+     "name": "Nye Mountain",
+     "ids": [
+      5129436
+     ],
+     "lat": 44.19311,
+     "lon": -74.02404,
+     "ele": 1173
+    },
+    {
+     "name": "Couchsachraga Peak",
+     "ids": [
+      5113843
+     ],
+     "lat": 44.09561,
+     "lon": -74.16015,
+     "ele": 1157
+    }
+   ]
+  },
+  {
+   "id": "seven-summits",
+   "name": "Seven Summits",
+   "region": "Every continent",
+   "detail": "The highest peak on each continent",
+   "symbol": "globe.americas.fill",
+   "bonusXP": 15000,
+   "peaks": [
+    {
+     "name": "Mount Everest",
+     "ids": [
+      1283416
+     ],
+     "lat": 27.98791,
+     "lon": 86.92529,
+     "ele": 8848
+    },
+    {
+     "name": "Aconcagua",
+     "ids": [
+      3866949
+     ],
+     "lat": -32.65383,
+     "lon": -70.01141,
+     "ele": 6959
+    },
+    {
+     "name": "Denali",
+     "ids": [
+      5868589
+     ],
+     "lat": 63.06933,
+     "lon": -151.00609,
+     "ele": 6194
+    },
+    {
+     "name": "Kilimanjaro",
+     "ids": [
+      157452
+     ],
+     "lat": -3.07583,
+     "lon": 37.35333,
+     "ele": 5895
+    },
+    {
+     "name": "Mount Elbrus",
+     "ids": [
+      563532
+     ],
+     "lat": 43.35276,
+     "lon": 42.4375,
+     "ele": 5642
+    },
+    {
+     "name": "Mount Vinson",
+     "ids": [
+      6630324,
+      6627584
+     ],
+     "lat": -78.52528,
+     "lon": -85.61722,
+     "ele": 4892
+    },
+    {
+     "name": "Puncak Jaya (or Mount Kosciuszko)",
+     "ids": [
+      1642658,
+      2161031
+     ],
+     "lat": -4.07861,
+     "lon": 137.15833,
+     "ele": 4884
+    }
+   ]
+  }
+ ]
+}

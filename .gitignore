@@ -1,13 +1,37 @@
-# Secrets
+# Secrets (copy Config/Secrets.example.xcconfig to Config/Secrets.xcconfig)
 Config/Secrets.xcconfig
 
-# Xcode
+# Xcode project: generated from project.yml by XcodeGen (run `xcodegen`)
 *.xcodeproj/
+*.xcworkspace/
+
+# Xcode user state and build output
 xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
 DerivedData/
 build/
+*.xcresult
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
 .swiftpm/
-*.xcuserstate
+.build/
+Packages/
+Package.resolved
+
+# Build-script downloads and Python caches (tools/)
+allCountries.zip
+allCountries.txt
+__pycache__/
+*.pyc
 
 # macOS
 .DS_Store

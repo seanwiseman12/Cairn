@@ -13,75 +13,79 @@ struct AuthView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 28) {
-                VStack(spacing: -10) {
-                    Text("the field journal")
-                        .font(.script(32, relativeTo: .title))
-                    Text("CAIRN")
-                        .font(.display(150, relativeTo: .largeTitle))
-                        .tracking(2)
-                        .speckled()
-                    Text("for every adventure")
-                        .font(.script(32, relativeTo: .title))
+            VStack(alignment: .leading, spacing: 28) {
+                VStack(alignment: .leading, spacing: 18) {
+                    CairnMark(size: 52)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Welcome to Cairn")
+                            .font(.cairn(.headline))
+                            .foregroundStyle(Theme.textSecondary)
+                        Text("Adventure\nAwaits")
+                            .font(.cairn(size: 46, weight: .semibold, relativeTo: .largeTitle))
+                            .foregroundStyle(Theme.textPrimary)
+                        Text("Log every summit, trail and trek on Earth, and see them all on your globe.")
+                            .font(.cairn(.body))
+                            .foregroundStyle(Theme.textSecondary)
+                    }
                 }
-                .foregroundStyle(Theme.cream)
-                .multilineTextAlignment(.center)
-                .accessibilityElement(children: .combine)
-                .padding(.top, 56)
+                .padding(.top, 48)
 
                 VStack(alignment: .leading, spacing: 14) {
-                    Text(isSignUp ? "Start your journal" : "Welcome back")
-                        .font(.script(28, relativeTo: .title2))
-                        .foregroundStyle(Theme.ink)
+                    Text(isSignUp ? "Create your account" : "Sign in")
+                        .font(.cairn(.title3, weight: .bold))
+                        .foregroundStyle(Theme.textPrimary)
 
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Email").journalLabel()
-                        TextField("you@example.com", text: $email)
-                            .textContentType(.emailAddress)
-                            .keyboardType(.emailAddress)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled()
-                    }
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Password").journalLabel()
-                        SecureField("At least 6 characters", text: $password)
-                            .textContentType(isSignUp ? .newPassword : .password)
-                    }
+                    TextField("Email", text: $email)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                    SecureField("Password (at least 6 characters)", text: $password)
+                        .textContentType(isSignUp ? .newPassword : .password)
 
                     if let message {
                         Text(message)
-                            .font(.footnote)
-                            .foregroundStyle(Theme.rust)
+                            .font(.cairn(.footnote))
+                            .foregroundStyle(Theme.danger)
                     }
 
                     Button {
                         Task { await submit() }
                     } label: {
                         if isWorking {
-                            ProgressView().tint(Theme.cream)
+                            ProgressView().tint(Theme.onForest)
                         } else {
                             Text(isSignUp ? "Create account" : "Sign in")
                         }
                     }
-                    .buttonStyle(JournalButtonStyle())
+                    .buttonStyle(PrimaryButtonStyle())
                     .disabled(isWorking || email.isEmpty || password.count < 6)
                     .padding(.top, 4)
                 }
-                .textFieldStyle(JournalFieldStyle())
-                .journalCard(padding: 20)
+                .textFieldStyle(CairnFieldStyle())
+                .card(padding: 20)
 
                 Button(isSignUp ? "Have an account? Sign in" : "New here? Create an account") {
                     isSignUp.toggle()
                     message = nil
                 }
-                .font(.script(22, relativeTo: .body))
-                .foregroundStyle(Theme.cream)
+                .font(.cairn(.subheadline, weight: .semibold))
+                .foregroundStyle(Theme.accent)
+                .frame(maxWidth: .infinity)
+
+                Button("Skip for now") {
+                    auth.continueAsGuest()
+                }
+                .font(.cairn(.subheadline))
+                .foregroundStyle(Theme.textSecondary)
+                .frame(maxWidth: .infinity)
+                .accessibilityHint("Explore Cairn without an account")
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 24)
         }
         .scrollDismissesKeyboard(.interactively)
-        .background(ContourBackground())
+        .background(Theme.background)
     }
 
     private func submit() async {

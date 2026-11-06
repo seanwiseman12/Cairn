@@ -24,10 +24,14 @@
 	<string>$(SUPABASE_HOST)</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BebasNeue-Regular.ttf</string>
-		<string>IMFellEnglish-Italic.ttf</string>
+		<string>Outfit-Regular.ttf</string>
+		<string>Outfit-Medium.ttf</string>
+		<string>Outfit-SemiBold.ttf</string>
+		<string>Outfit-Bold.ttf</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UNSPLASH_ACCESS_KEY</key>
+	<string>$(UNSPLASH_ACCESS_KEY)</string>
 </dict>
 </plist>

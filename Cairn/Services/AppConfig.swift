@@ -1,6 +1,6 @@
 import Foundation
 
-/// Reads Supabase settings that Config/Secrets.xcconfig injects into Info.plist.
+/// Reads Supabase and Unsplash settings that Config/Secrets.xcconfig injects into Info.plist.
 enum AppConfig {
     static let supabaseURL: URL = {
         guard let host = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_HOST") as? String,
@@ -18,6 +18,15 @@ enum AppConfig {
         else {
             fatalError("Set SUPABASE_ANON_KEY in Config/Secrets.xcconfig")
         }
+        return key
+    }()
+
+    /// Optional: Unsplash access key for fallback photos (Config/Secrets.xcconfig,
+    /// UNSPLASH_ACCESS_KEY). Nil when not set, and the app just skips Unsplash.
+    static let unsplashAccessKey: String? = {
+        guard let key = Bundle.main.object(forInfoDictionaryKey: "UNSPLASH_ACCESS_KEY") as? String,
+              !key.isEmpty, key != "your-unsplash-access-key"
+        else { return nil }
         return key
     }()
 }

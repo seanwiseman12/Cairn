@@ -19,6 +19,8 @@ targets:
       Release: Config/Secrets.xcconfig
     dependencies:
       - package: Supabase
+    scheme:
+      testTargets: [CairnTests]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.cairnapp.Cairn
@@ -33,8 +35,21 @@ targets:
       properties:
         SUPABASE_HOST: $(SUPABASE_HOST)
         SUPABASE_ANON_KEY: $(SUPABASE_ANON_KEY)
+        UNSPLASH_ACCESS_KEY: $(UNSPLASH_ACCESS_KEY)
         UILaunchScreen: {}
-        # Bundled fonts (SIL Open Font License; licenses in Cairn/Resources/Fonts)
+        # Bundled font: Outfit (SIL Open Font License; license in Cairn/Resources/Fonts)
         UIAppFonts:
-          - BebasNeue-Regular.ttf
-          - IMFellEnglish-Italic.ttf
+          - Outfit-Regular.ttf
+          - Outfit-Medium.ttf
+          - Outfit-SemiBold.ttf
+          - Outfit-Bold.ttf
+  CairnTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [CairnTests]
+    dependencies:
+      - target: Cairn
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"

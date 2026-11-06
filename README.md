@@ -12,3 +12,9 @@ Log any adventure on Earth onto a 3D globe. See PLAN.md for the full plan.
 
 `Cairn.xcodeproj` is generated from `project.yml`, so edit `project.yml` and re-run
 `xcodegen` instead of changing project settings in Xcode.
+
+## Credits
+- Globe elevation data: NOAA ETOPO1 Global Relief Model (public domain), downsampled and smoothed
+  into `Cairn/Resources/Globe/globe-relief.png`.
+- Mountain search data: GeoNames (https://www.geonames.org), CC BY 4.0, built into
+  `Cairn/Resources/Peaks/peaks.sqlite` by `tools/make_peaks.py`.
